@@ -1,0 +1,23 @@
+[
+  {
+    "id": "id-1",
+    "composition": "фуа-гра",
+    "portions": 10,
+    "gift": "мышь в подарок",
+    "weight": "0,5"
+  },
+  {
+    "id": "id-2",
+    "composition": "рыбой",
+    "portions": 40,
+    "gift": "2 мыши в подарок",
+    "weight": "2"
+  },
+  {
+    "id": "id-3",
+    "composition": "куркой",
+    "portions": 100,
+    "gift": "5 мышей в подарок заказчик доволен",
+    "weight": "5"
+  }
+]
