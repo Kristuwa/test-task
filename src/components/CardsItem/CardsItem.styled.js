@@ -3,9 +3,9 @@ import bgImg from '../../img/Photo.png';
 import bgImgBig from '../../img/Photo@2x.png';
 
 export const CardsItemElem = styled.li`
-  cursor: pointer;
   width: 290px;
   position: relative;
+
   @media screen and (min-width: 375px) {
     width: 312px;
   }
@@ -17,37 +17,6 @@ export const ContainerNoActive = styled.div`
       return 'background-color: #F2F2F2; opacity: 0.65; position:absolute; width: 290px; height: 488px; top:0; left:0;z-index:1;border-radius: 14px; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%); margin-bottom: 14px; @media screen and (min-width: 375px) {width: 320px;}';
     }
   }}
-`;
-
-export const CardTop = styled.div`
-  padding: 21px 16px 33px 51px;
-`;
-export const Card = styled.div`
-  background-color: ${props => props.theme.colors.backgroundColor};
-
-  background-image: url(${bgImg});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 368px 360px;
-  background-position: -24px 208px;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 282px;
-  height: 480px;
-  border-radius: 11px;
-  clip-path: polygon(14.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.7%);
-
-  @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url(${bgImgBig});
-  }
-
-  @media screen and (min-width: 375px) {
-    width: 312px;
-  }
 `;
 
 export const ContentContainer = styled.div`
@@ -75,6 +44,7 @@ export const ContentContainer = styled.div`
 `;
 
 export const CardContainer = styled.div`
+  cursor: pointer;
   position: relative;
   width: 290px;
   height: 488px;
@@ -116,6 +86,38 @@ export const CardContainer = styled.div`
     }};
   }
 `;
+
+export const CardTop = styled.div`
+  padding: 21px 16px 33px 51px;
+`;
+export const Card = styled.div`
+  background-color: ${props => props.theme.colors.backgroundColor};
+
+  background-image: url(${bgImg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 368px 360px;
+  background-position: -24px 208px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 282px;
+  height: 480px;
+  border-radius: 11px;
+  clip-path: polygon(14.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.7%);
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${bgImgBig});
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 312px;
+  }
+`;
+
 export const TitleTopText = styled.p`
   font-family: ${props => props.theme.fonts.mainFont};
   font-weight: 400;

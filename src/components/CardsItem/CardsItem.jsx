@@ -33,7 +33,12 @@ export const CardsItem = ({
   return (
     <CardsItemElem>
       <ContainerNoActive balance={balance}></ContainerNoActive>
-      <CardContainer balance={balance} onClick={toggleCard} value={selected}>
+      <CardContainer
+        balance={balance}
+        onClick={toggleCard}
+        value={selected}
+        disabled={balance === 0}
+      >
         <Card>
           <CardTop>
             <TitleTopText>Сказочное заморское яство</TitleTopText>
