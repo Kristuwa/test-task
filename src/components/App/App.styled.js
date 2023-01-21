@@ -14,12 +14,17 @@ export const Section = styled.section`
     (min-resolution: 2dppx) {
     background-image: url(${bgImgBig});
   }
+
+  @media screen and (min-width: 1280px) {
+    height: 100vh;
+  }
 `;
 export const Container = styled.div`
   width: 100%x;
   min-width: 320px;
   margin: 0 auto;
-
+  padding-bottom: 40px;
+  padding-top: 40px;
   width: 320px;
   @media screen and (min-width: 320px) and (max-width: 767px) {
     padding-left: 15px;
@@ -42,7 +47,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: 'Exo2.0';
+  font-family: ${props => props.theme.fonts.secondaryFont};
   text-shadow: 0px 1px 1px #000000;
   font-size: 36px;
   line-height: 1.22;

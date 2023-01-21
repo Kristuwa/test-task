@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import {
   CardsItemElem,
   Card,
@@ -12,13 +13,27 @@ import {
   ContentContainer,
   Text,
   CardContainer,
+  Button,
+  ContainerNoActive,
 } from './CardsItem.styled';
-// import { NavLink } from 'react-router-dom';
 
-export const CardsItem = ({ composition, portions, gift, weight }) => {
+export const CardsItem = ({
+  composition,
+  portions,
+  gift,
+  weight,
+  balance,
+  bottomText,
+}) => {
+  const [selected, setSelected] = useState(false);
+  const toggleCard = () => {
+    setSelected(prevState => !prevState);
+  };
+
   return (
     <CardsItemElem>
-      <CardContainer>
+      <ContainerNoActive balance={balance}></ContainerNoActive>
+      <CardContainer balance={balance} onClick={toggleCard} value={selected}>
         <Card>
           <CardTop>
             <TitleTopText>Сказочное заморское яство</TitleTopText>
@@ -27,14 +42,25 @@ export const CardsItem = ({ composition, portions, gift, weight }) => {
             <TextPortions>{portions} порций</TextPortions>
             <TextGift>{gift}</TextGift>
           </CardTop>
-          <ContentContainer>
+          <ContentContainer balance={balance} value={selected}>
             <Text>{weight}</Text>
             <p>кг</p>
           </ContentContainer>
         </Card>
       </CardContainer>
 
-      <BottomText>Чего сидишь? Порадуй котэ, купи.</BottomText>
+      <BottomText balance={balance}>
+        {balance > 0 && selected && bottomText}
+        {balance > 0 && !selected && (
+          <>
+            Чего сидишь? Порадуй котэ,
+            <Button type="button" onClick={toggleCard}>
+              купи.
+            </Button>
+          </>
+        )}
+        {balance === 0 && `Печалька, с ${composition} закончился.`}
+      </BottomText>
     </CardsItemElem>
   );
 };
@@ -44,4 +70,6 @@ CardsItem.propTypes = {
   portions: PropTypes.number.isRequired,
   gift: PropTypes.string.isRequired,
   weight: PropTypes.string.isRequired,
+  balance: PropTypes.number.isRequired,
+  bottomText: PropTypes.string.isRequired,
 };
