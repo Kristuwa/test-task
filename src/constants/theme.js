@@ -8,6 +8,7 @@ export const theme = {
     hoverBackgroundColor: '#2EA8E6',
     selectedHoverColor: '#E52E7A',
     noneBalanceColor: '#FFFF66',
+    greyBackgroundColor: '#B3B3B3',
   },
   fonts: {
     mainFont: 'Trebuchet MS',

@@ -11,6 +11,14 @@ export const CardsItemElem = styled.li`
   }
 `;
 
+export const ContainerNoActive = styled.div`
+  ${props => {
+    if (props.balance === 0) {
+      return 'background-color: #F2F2F2; opacity: 0.65; position:absolute; width: 290px; height: 488px; top:0; left:0;z-index:1;border-radius: 14px; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%); margin-bottom: 14px; @media screen and (min-width: 375px) {width: 320px;}';
+    }
+  }}
+`;
+
 export const CardTop = styled.div`
   padding: 21px 16px 33px 51px;
 `;
@@ -54,7 +62,7 @@ export const ContentContainer = styled.div`
       return props.theme.colors.pinkBackgroundColor;
     }
     if (props.balance === 0) {
-      return '#B3B3B3';
+      return props.theme.colors.greyBackgroundColor;
     }
     return props.theme.colors.blueBackgroundColor;
   }};
@@ -75,7 +83,7 @@ export const CardContainer = styled.div`
       return props.theme.colors.pinkBackgroundColor;
     }
     if (props.balance === 0) {
-      return '#B3B3B3';
+      return props.theme.colors.greyBackgroundColor;
     }
     return props.theme.colors.blueBackgroundColor;
   }};
@@ -202,12 +210,4 @@ export const Button = styled.button`
     border-bottom: ${props =>
       `1px dashed ${props.theme.colors.hoverBackgroundColor}`};
   }
-`;
-
-export const ContainerNoActive = styled.div`
-  ${props => {
-    if (props.balance === 0) {
-      return 'background-color: #F2F2F2; opacity: 0.65; position:absolute; width: 290px; height: 488px; top:0; left:0;z-index:1;border-radius: 14px; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%); margin-bottom: 14px; @media screen and (min-width: 375px) {width: 320px;}';
-    }
-  }}
 `;
